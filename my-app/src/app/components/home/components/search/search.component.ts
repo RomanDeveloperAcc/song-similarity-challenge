@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SongsService } from '../../../songs/services/songs.service';
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SongsService } from '../../services/songs.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-songs-list',
@@ -8,7 +9,8 @@ import { SongsService } from '../../services/songs.service';
 })
 export class SongsListComponent implements OnInit {
   public songs = [];
-  constructor(private songsService: SongsService) { }
+  constructor(private songsService: SongsService,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.setSongs();
@@ -21,4 +23,8 @@ export class SongsListComponent implements OnInit {
       });
   }
 
+  public viewSimilar(id: number): void {
+    this.songsService.setSongId(id);
+    this.router.navigate(['/songs/', id]);
+  }
 }

@@ -1,5 +1,6 @@
 <div class="wrapper">
   <app-songs-list-item *ngFor="let song of songs"
                        [song]="song"
+                       (click)="viewSimilar(song.id)"
   ></app-songs-list-item>
 </div>

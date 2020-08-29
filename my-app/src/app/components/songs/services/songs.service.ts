@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SongsService {
   private searchQuery: string;
+  private songId: number;
   private backEnd = environment.backEndLink;
   constructor(private http: HttpClient) { }
 
@@ -15,12 +16,12 @@ export class SongsService {
     this.searchQuery = query;
   }
 
-  public getSimilarSongs(): Observable<object> {
-    const payload = {
-      content: this.searchQuery
-    };
+  public setSongId(id: number): void {
+    this.songId = id;
+  }
 
-    return this.http.post<object>(`${this.backEnd}/similarity/by_content`, payload);
+  public getSimilarSongs(): Observable<object> {
+    return this.http.get<object>(`${this.backEnd}/similarity/by_song?song_id=${this.songId}`);
   }
 
   public getSongsByQuery(): Observable<object> {
