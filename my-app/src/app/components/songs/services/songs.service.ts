@@ -7,20 +7,15 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class SongsService {
-  private searchQuery: string;
   private backEnd = environment.backEndLink;
   constructor(private http: HttpClient) { }
 
-  public getSearchQuery(): string {
-    return this.searchQuery;
-  }
-
-  public setSearchQuery(query: string): void {
-    this.searchQuery = query;
-  }
-
   public getSimilarSongs(words: string): Observable<object> {
-    return this.http.get<object>(`${this.backEnd}/similarity/by_content?content=${words}`);
+    const payload = {
+      content: words
+    };
+
+    return this.http.post<object>(`${this.backEnd}/similarity/by_content`, payload);
   }
 
   public getSongsByQuery(query: string): Observable<object> {
