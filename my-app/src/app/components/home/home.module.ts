@@ -5,8 +5,6 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-
-
 @NgModule({
   declarations: [
     SearchComponent,

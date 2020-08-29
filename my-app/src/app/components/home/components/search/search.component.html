@@ -8,10 +8,13 @@
   <div class="search">
     <input type="text"
            class="search-input"
+           placeholder="Search by Artist or Song"
            [(ngModel)]="inputValue"
+           autofocus
     >
     <button class="search-btn"
             (click)="search()"
+            type="submit"
     >
       <img [src]="searchIcon"
            alt=""
