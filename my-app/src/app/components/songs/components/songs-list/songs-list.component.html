@@ -1,1 +1,5 @@
-<p>songs-list works!</p>
+<div class="wrapper">
+  <app-songs-list-item *ngFor="let song of songs"
+                       [song]="song"
+  ></app-songs-list-item>
+</div>

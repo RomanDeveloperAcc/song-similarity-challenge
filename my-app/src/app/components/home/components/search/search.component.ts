@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SongsService } from '../../../songs/services/songs.service';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-search',
@@ -10,14 +11,15 @@ export class SearchComponent implements OnInit {
   public searchIcon = '/assets/img/homepage/search.png';
   public inputValue: string;
 
-  constructor(private songsService: SongsService) { }
+  constructor(private songsService: SongsService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
 
   public search(): void {
-    this.songsService.getSongsByQuery(this.inputValue)
-      .subscribe(data => console.log(data));
+    this.songsService.setQuery(this.inputValue);
+    this.router.navigate(['/songs']);
   }
 
 }
