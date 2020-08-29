@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SearchComponent } from './components/search/search.component';
-import { HomepageComponent } from "./components/homepage/homepage.component";
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -10,11 +12,13 @@ import { HomepageComponent } from "./components/homepage/homepage.component";
     SearchComponent,
     HomepageComponent
   ],
+  imports: [
+    CommonModule,
+    FormsModule,
+    HttpClientModule
+  ],
   exports: [
     HomepageComponent
-  ],
-  imports: [
-    CommonModule
   ]
 })
 export class HomeModule { }

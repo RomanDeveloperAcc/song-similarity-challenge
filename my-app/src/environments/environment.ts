@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  backEndLink: 'https://searchly.asuarez.dev/api/v1'
 };
 
 /*

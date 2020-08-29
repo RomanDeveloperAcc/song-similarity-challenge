@@ -6,9 +6,17 @@
     Any genre, any time period. If we heard it, we can help.
   </h2>
   <div class="search">
-    <input type="text" class="search-input">
-    <button class="search-btn">
-      <img [src]="searchIcon" alt="" class="search-img">
+    <input type="text"
+           class="search-input"
+           [(ngModel)]="inputValue"
+    >
+    <button class="search-btn"
+            (click)="search()"
+    >
+      <img [src]="searchIcon"
+           alt=""
+           class="search-img"
+      >
     </button>
   </div>
 </div>
