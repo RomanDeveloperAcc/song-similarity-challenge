@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+$main-font: 'Roboto';
+$placeholder-font: 'Open Sans';
+
+.wrapper {
+  text-align: center;
+  font-family: $main-font;
+  color: #fff;
+  margin-bottom: 5rem;
+  text-shadow: #000 0 0 0.5rem;
+
+  .title {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+
+  .search {
+    height: 3rem;
+    width: 100%;
+    display: flex;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+    box-shadow: 0px 0px 3rem 0.5rem rgba(0,0,0,1);
+
+    .search-input,
+    .search-btn {
+      height: 100%;
+      outline: none;
+    }
+
+    .search-input {
+      display: block;
+      width: 90%;
+      border: none;
+      border-radius: 0.5rem 0 0 0.5rem;
+      padding-left: 1rem;
+      font-family: $placeholder-font;
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+
+    .search-btn {
+      background-color: #fff;
+      border: none;
+      border-radius: 0 0.5rem 0.5rem 0;
+      width: 10%;
+      cursor: pointer;
+
+      .search-img {}
+    }
+  }
+}
