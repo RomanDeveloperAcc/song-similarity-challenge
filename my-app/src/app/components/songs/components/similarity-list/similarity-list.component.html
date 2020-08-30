@@ -1,5 +1,6 @@
 <div class="wrapper">
   <app-similarity-list-item *ngFor="let song of similarSongs"
                             [song]="song"
+                            (click)="openDialogWindow(song)"
   ></app-similarity-list-item>
 </div>

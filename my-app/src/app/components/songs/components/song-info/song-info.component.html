@@ -1,0 +1,23 @@
+<div class="wrapper">
+  <div class="title">
+    <a [href]="songInfo.song_url">
+      {{ songInfo.song_name }}
+    </a>
+  </div>
+  <div class="artist">
+    <a [href]="songInfo.artist_url">
+      {{ songInfo.artist_name }}
+    </a>
+  </div>
+  <div class="percentage">
+    {{ songInfo.percentage }}&#37; Match
+  </div>
+  <div class="lyrics">
+    <div class="lyrics-title">
+      Lyrics
+    </div>
+    <div class="lyrics-text">
+      {{ songInfo.lyrics }}
+    </div>
+  </div>
+</div>

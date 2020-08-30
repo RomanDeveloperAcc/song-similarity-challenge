@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { SongResponseModel } from '../../../models/song-response.model';
 import { QueryResponseModel } from '../../../models/query-response.model';
+import { SimilarSongModel } from '../models/similar-song.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,16 @@ export class SongsService {
   private searchQuery: string;
   private songId: number;
   private backEnd = environment.backEndLink;
+  private songInfo: SimilarSongModel;
   constructor(private http: HttpClient) { }
+
+  public getSongInfo(): SimilarSongModel {
+    return this.songInfo;
+  }
+
+  public setSongInfo(song: SimilarSongModel): void {
+    this.songInfo = song;
+  }
 
   public setQuery(query: string): void {
     this.searchQuery = query;
