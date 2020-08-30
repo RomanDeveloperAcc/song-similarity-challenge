@@ -3,6 +3,9 @@
 $main-font: 'Roboto';
 
 .wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
   text-align: center;
   font-family: $main-font;
   padding: 16px 0;
@@ -15,28 +18,33 @@ $main-font: 'Roboto';
   width: 100%;
   height: 280px;
 
-  .artist,
-  .match-text,
-  .more-info {
-    font-size: 16px;
+  .dynamic-info {
+    .artist,
+    .match-text,
+    .more-info {
+      font-size: 16px;
+    }
+
+    .title {
+      font-size: 24px;
+      line-height: 24px;
+    }
+
+    .artist {
+      line-height: 24px;
+    }
   }
 
-  .title {
-    font-size: 24px;
-    line-height: 24px;
-  }
+  .static-info {
+    margin-bottom: 24px;
 
-  .artist {
-    line-height: 24px;
-  }
+    .percentage {
+      font-size: 32px;
+    }
 
-  .percentage {
-    margin-top: 32px;
-    font-size: 32px;
-  }
-
-  .match-text {
-    margin-bottom: 32px;
-    font-weight: 500;
+    .match-text {
+      margin-bottom: 46px;
+      font-weight: 500;
+    }
   }
 }

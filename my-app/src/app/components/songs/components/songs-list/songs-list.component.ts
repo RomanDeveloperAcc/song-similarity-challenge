@@ -27,7 +27,6 @@ export class SongsListComponent implements OnInit {
   }
 
   public viewSimilar(id: number): void {
-    this.songsService.setSongId(id);
     this.router.navigate(['/songs/', id]);
   }
 }

@@ -1,17 +1,21 @@
 <div class="wrapper">
-  <div class="title">
-    {{ song.song_name }}
+  <div class="dynamic-info">
+    <div class="title">
+      {{ song.song_name }}
+    </div>
+    <div class="artist">
+      {{ song.artist_name }}
+    </div>
   </div>
-  <div class="artist">
-    {{ song.artist_name }}
-  </div>
-  <div class="percentage">
-    {{ song.percentage }}&#37;
-  </div>
-  <div class="match-text">
-    Match
-  </div>
-  <div class="more-info">
-    More Info
+  <div class="static-info">
+    <div class="percentage">
+      {{ song.percentage }}&#37;
+    </div>
+    <div class="match-text">
+      Match
+    </div>
+    <div class="more-info">
+      More Info
+    </div>
   </div>
 </div>

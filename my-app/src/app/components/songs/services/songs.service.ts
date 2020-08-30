@@ -11,7 +11,6 @@ import { SimilarSongModel } from '../models/similar-song.model';
 })
 export class SongsService {
   private searchQuery: string;
-  private songId: number;
   private backEnd = environment.backEndLink;
   private songInfo: SimilarSongModel;
   constructor(private http: HttpClient) { }
@@ -28,12 +27,8 @@ export class SongsService {
     this.searchQuery = query;
   }
 
-  public setSongId(id: number): void {
-    this.songId = id;
-  }
-
-  public getSimilarSongs(): Observable<SongResponseModel> {
-    return this.http.get<SongResponseModel>(`${this.backEnd}/similarity/by_song?song_id=${this.songId}`);
+  public getSimilarSongs(id: number): Observable<SongResponseModel> {
+    return this.http.get<SongResponseModel>(`${this.backEnd}/similarity/by_song?song_id=${id}`);
   }
 
   public getSongsByQuery(): Observable<QueryResponseModel> {

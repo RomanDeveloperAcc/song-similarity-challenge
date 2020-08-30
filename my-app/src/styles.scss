@@ -10,10 +10,12 @@
   &::-webkit-scrollbar {
     width: 6px;
     background-color: #21262a;
+    border-radius: 6px;
   }
 
   &::-webkit-scrollbar-thumb {
     width: 6px;
     background-color: #2d353b;
+    border-radius: 6px;
   }
 }

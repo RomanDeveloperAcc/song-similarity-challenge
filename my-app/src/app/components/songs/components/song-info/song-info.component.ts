@@ -22,14 +22,12 @@ export class SongInfoComponent implements OnInit {
   }
 
   private transformLyrics(): void {
-    console.log(this.songInfo.lyrics)
     if (this.songInfo.lyrics[0] === ',') {
       this.songInfo.lyrics = this.songInfo.lyrics.slice(1, this.songInfo.lyrics.length);
     }
-    console.log(this.songInfo.lyrics)
+
     let tempArr = this.songInfo.lyrics.split('');
     tempArr = tempArr.map(elem => elem === ',' ? elem + '\n' : elem);
     this.songInfo.lyrics = tempArr.join('');
-    console.log(this.songInfo.lyrics)
   }
 }
