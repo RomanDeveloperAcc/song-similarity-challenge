@@ -10,7 +10,7 @@ import { SimilarSongModel } from '../models/similar-song.model';
   providedIn: 'root'
 })
 export class SongsService {
-  private searchQuery: string;
+  private searchQuery = '';
   private backEnd = environment.backEndLink;
   private songInfo: SimilarSongModel;
   constructor(private http: HttpClient) { }

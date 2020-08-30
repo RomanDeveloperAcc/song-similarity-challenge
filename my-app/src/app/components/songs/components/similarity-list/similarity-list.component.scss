@@ -1,3 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+$main-font: 'Roboto';
+
+.loaders-wrapper {
+  margin: 24px 0;
+
+  .loading {
+    display: flex;
+    justify-content: center;
+
+    &::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+      stroke: #fff;
+    }
+  }
+
+  .no-result {
+    font-family: $main-font;
+    color: #fff;
+    font-size: 36px;
+    margin-top: 24px;
+    text-align: center;
+  }
+}
+
 .wrapper {
   display: grid;
   margin: 0 5%;

@@ -9,6 +9,7 @@ import { SimilarityListComponent } from './components/similarity-list/similarity
 import { SimilarityListItemComponent } from './components/similarity-list/similarity-list-item/similarity-list-item.component';
 import { SongInfoComponent } from './components/song-info/song-info.component';
 import { ModifyTextPipe } from './pipes/modify-text.pipe';
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ModifyTextPipe } from './pipes/modify-text.pipe';
   imports: [
     CommonModule,
     SongsRoutingModule,
-    MatDialogModule
+    MatDialogModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     SongsComponent,

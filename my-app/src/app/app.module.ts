@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './components/home/home.module';
 import { SongsModule } from './components/songs/songs.module';
 import { SharedModule } from './components/shared/shared.module';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     HomeModule,
     SongsModule,
     SharedModule,
-    NoopAnimationsModule
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

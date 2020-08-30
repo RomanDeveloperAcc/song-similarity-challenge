@@ -14,6 +14,8 @@ import { SongInfoComponent } from '../song-info/song-info.component';
 })
 export class SimilarityListComponent implements OnInit, OnDestroy {
   public similarSongs: SimilarSongModel[] = [];
+  public areSongsAvailable = false;
+  public areSongsLoading = true;
   private songId: number;
   private similarSongsSubscription: Subscription;
   private songIdSubscription: Subscription;
@@ -50,7 +52,11 @@ export class SimilarityListComponent implements OnInit, OnDestroy {
   private setSimilarSongs(): void {
     this.similarSongsSubscription = this.songsService
       .getSimilarSongs(this.songId)
-      .subscribe((data: SongResponseModel) => this.similarSongs = [...data.response.similarity_list]);
+      .subscribe((data: SongResponseModel) => {
+        this.similarSongs = [...data.response.similarity_list];
+        this.areSongsLoading = false;
+        this.areSongsAvailable = this.similarSongs.length > 0;
+      });
   }
 
   ngOnDestroy(): void {

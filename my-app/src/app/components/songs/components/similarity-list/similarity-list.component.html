@@ -1,3 +1,15 @@
+<div class="loaders-wrapper">
+  <div class="loading"
+       *ngIf="areSongsLoading"
+  >
+    <mat-spinner></mat-spinner>
+  </div>
+  <div class="no-result"
+       *ngIf="!areSongsAvailable && !areSongsLoading"
+  >
+    There are no songs :(
+  </div>
+</div>
 <div class="wrapper">
   <app-similarity-list-item *ngFor="let song of similarSongs"
                             [song]="song"
