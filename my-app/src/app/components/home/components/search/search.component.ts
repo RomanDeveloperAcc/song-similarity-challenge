@@ -18,8 +18,10 @@ export class SearchComponent implements OnInit {
   }
 
   public search(): void {
-    this.songsService.setQuery(this.inputValue);
-    this.router.navigate(['/songs']);
+    if (this.inputValue && this.inputValue.trim()) {
+      this.songsService.setQuery(this.inputValue);
+      this.router.navigate(['/songs']);
+    }
   }
 
 }
