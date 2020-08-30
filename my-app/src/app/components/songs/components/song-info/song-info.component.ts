@@ -14,20 +14,9 @@ export class SongInfoComponent implements OnInit {
 
   ngOnInit(): void {
     this.setSongInfo();
-    this.transformLyrics();
   }
 
   private setSongInfo(): void {
     this.songInfo = { ...this.songsService.getSongInfo() };
-  }
-
-  private transformLyrics(): void {
-    if (this.songInfo.lyrics[0] === ',') {
-      this.songInfo.lyrics = this.songInfo.lyrics.slice(1, this.songInfo.lyrics.length);
-    }
-
-    let tempArr = this.songInfo.lyrics.split('');
-    tempArr = tempArr.map(elem => elem === ',' ? elem + '\n' : elem);
-    this.songInfo.lyrics = tempArr.join('');
   }
 }

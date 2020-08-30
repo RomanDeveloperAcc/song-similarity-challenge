@@ -8,6 +8,7 @@ import { SongsRoutingModule } from './songs-routing.module';
 import { SimilarityListComponent } from './components/similarity-list/similarity-list.component';
 import { SimilarityListItemComponent } from './components/similarity-list/similarity-list-item/similarity-list-item.component';
 import { SongInfoComponent } from './components/song-info/song-info.component';
+import { ModifyTextPipe } from './pipes/modify-text.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SongInfoComponent } from './components/song-info/song-info.component';
     SongsListItemComponent,
     SimilarityListComponent,
     SimilarityListItemComponent,
-    SongInfoComponent
+    SongInfoComponent,
+    ModifyTextPipe
   ],
   imports: [
     CommonModule,
