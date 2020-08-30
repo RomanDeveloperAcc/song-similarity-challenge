@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+$main-font: 'Roboto';
+
+.wrapper {
+  text-align: center;
+  font-family: $main-font;
+  padding: 16px 0;
+  color: #fff;
+  background-color: #21262a;
+  text-transform: capitalize;
+  box-shadow: 0 0 48px 8px rgba(0,0,0,0.5);
+  cursor: pointer;
+  border-radius: 4px;
+  width: 100%;
+  height: 280px;
+
+  .artist,
+  .match-text,
+  .more-info {
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  .artist {
+    line-height: 24px;
+  }
+
+  .percentage {
+    margin-top: 32px;
+    font-size: 32px;
+  }
+
+  .match-text {
+    margin-bottom: 32px;
+    font-weight: 500;
+  }
+}
