@@ -2,12 +2,31 @@
   <div class="loading"
        *ngIf="areSongsLoading"
   >
-    <mat-spinner></mat-spinner>
+    <div class="loading-text">
+      <div class="constant-text">
+        Please, wait while the songs are loading
+      </div>
+      <div class="song-fact">
+        {{ songFact }}
+      </div>
+    </div>
   </div>
   <div class="no-result"
-       *ngIf="!areSongsAvailable && !areSongsLoading"
+       *ngIf="!areSongsAvailable
+       && !areSongsLoading
+       && !isError"
   >
     There are no songs :(
+  </div>
+  <div class="error-message"
+       *ngIf="isError"
+  >
+    Whoops, something went wrong. Please, try again.
+  </div>
+  <div class="spinner"
+       *ngIf="areSongsLoading"
+  >
+    <mat-spinner></mat-spinner>
   </div>
 </div>
 <div class="wrapper">

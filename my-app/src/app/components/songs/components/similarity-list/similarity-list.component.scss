@@ -4,22 +4,46 @@ $main-font: 'Roboto';
 
 .loaders-wrapper {
   margin: 24px 0;
+  text-align: center;
 
   .loading {
     display: flex;
     justify-content: center;
+    flex-direction: column;
 
-    &::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
-      stroke: #fff;
+    .loading-text {
+      font-family: $main-font;
+      color: #fff;
+      margin: 48px 0;
+
+      .constant-text {
+        font-size: 48px;
+        margin-bottom: 48px;
+      }
+
+      .song-fact {
+        font-size: 36px;
+        animation: text-visibility 7s infinite;
+      }
     }
   }
 
-  .no-result {
+  .no-result,
+  .error-message {
     font-family: $main-font;
     color: #fff;
     font-size: 36px;
     margin-top: 24px;
-    text-align: center;
+  }
+
+  .spinner {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+
+    &::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+      stroke: #fff;
+    }
   }
 }
 
@@ -29,4 +53,16 @@ $main-font: 'Roboto';
   padding: 32px 0;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 24px;
+}
+
+@keyframes text-visibility {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
