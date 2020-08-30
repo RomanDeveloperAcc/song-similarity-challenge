@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { SongResponseModel } from '../../../models/song-response.model';
+import { QueryResponseModel } from '../../../models/query-response.model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,11 +22,11 @@ export class SongsService {
     this.songId = id;
   }
 
-  public getSimilarSongs(): Observable<object> {
-    return this.http.get<object>(`${this.backEnd}/similarity/by_song?song_id=${this.songId}`);
+  public getSimilarSongs(): Observable<SongResponseModel> {
+    return this.http.get<SongResponseModel>(`${this.backEnd}/similarity/by_song?song_id=${this.songId}`);
   }
 
-  public getSongsByQuery(): Observable<object> {
-    return this.http.get<object>(`${this.backEnd}/song/search?query=${this.searchQuery}`);
+  public getSongsByQuery(): Observable<QueryResponseModel> {
+    return this.http.get<QueryResponseModel>(`${this.backEnd}/song/search?query=${this.searchQuery}`);
   }
 }

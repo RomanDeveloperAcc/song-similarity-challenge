@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SongsService } from '../../services/songs.service';
+import { SongResponseModel } from '../../../../models/song-response.model';
+import { SimilarSongModel } from '../../models/similar-song.model';
 
 @Component({
   selector: 'app-similarity-list',
@@ -7,7 +9,7 @@ import { SongsService } from '../../services/songs.service';
   styleUrls: ['./similarity-list.component.scss']
 })
 export class SimilarityListComponent implements OnInit {
-  public similarSongs = [];
+  public similarSongs: SimilarSongModel[] = [];
 
   constructor(private songsService: SongsService) { }
 
@@ -17,6 +19,6 @@ export class SimilarityListComponent implements OnInit {
 
   private setSimilarSongs(): void {
     this.songsService.getSimilarSongs()
-      .subscribe((data: any) => this.similarSongs = [...data.response.similarity_list]);
+      .subscribe((data: SongResponseModel) => this.similarSongs = [...data.response.similarity_list]);
   }
 }

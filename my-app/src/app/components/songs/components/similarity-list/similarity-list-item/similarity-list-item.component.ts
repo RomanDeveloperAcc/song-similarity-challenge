@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { SimilarSongModel } from '../../../models/similar-song.model';
 
 @Component({
   selector: 'app-similarity-list-item',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./similarity-list-item.component.scss']
 })
 export class SimilarityListItemComponent implements OnInit {
-  @Input() public song: any;
+  @Input() public song: SimilarSongModel;
 
   constructor() { }
 

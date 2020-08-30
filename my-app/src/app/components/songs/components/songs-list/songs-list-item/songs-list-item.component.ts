@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { SongModel } from '../../../models/song.model';
 
 @Component({
   selector: 'app-songs-list-item',
@@ -6,7 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./songs-list-item.component.scss']
 })
 export class SongsListItemComponent implements OnInit {
-  @Input() public song: any;
+  @Input() public song: SongModel;
+
   constructor() { }
 
   ngOnInit(): void {

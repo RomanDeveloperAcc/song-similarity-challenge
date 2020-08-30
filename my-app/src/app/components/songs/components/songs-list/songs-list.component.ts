@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SongsService } from '../../services/songs.service';
 import { Router } from '@angular/router';
+import { QueryResponseModel } from '../../../../models/query-response.model';
+import { SongModel } from '../../models/song.model';
 
 @Component({
   selector: 'app-songs-list',
@@ -8,7 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./songs-list.component.scss']
 })
 export class SongsListComponent implements OnInit {
-  public songs = [];
+  public songs: SongModel[] = [];
+
   constructor(private songsService: SongsService,
               private router: Router) { }
 
@@ -18,7 +21,7 @@ export class SongsListComponent implements OnInit {
 
   private setSongs(): void {
     this.songsService.getSongsByQuery()
-      .subscribe((data: any) => {
+      .subscribe((data: QueryResponseModel) => {
         this.songs = [...data.response.results];
       });
   }
