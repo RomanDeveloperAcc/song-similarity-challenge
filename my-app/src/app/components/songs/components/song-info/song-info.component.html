@@ -1,14 +1,14 @@
-<div class="wrapper">
-  <div class="cross-wrapper">
-    <div class="cross"
-         (click)="closeDialogWindow()"
+<div class="cross-wrapper">
+  <div class="cross"
+       (click)="closeDialogWindow()"
+  >
+    <img [src]="crossImage"
+         alt=""
+         class="cross-img"
     >
-      <img [src]="crossImage"
-           alt=""
-           class="cross-img"
-      >
-    </div>
   </div>
+</div>
+<div class="wrapper">
   <div class="title">
     <a [href]="songInfo.song_url"
        target="_blank"

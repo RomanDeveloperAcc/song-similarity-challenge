@@ -2,6 +2,21 @@
 
 $main-font: 'Roboto';
 
+.cross-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 90%;
+  margin: 0 auto;
+
+  .cross {
+    cursor: pointer;
+
+    .cross-img {
+      filter: invert(100%);
+    }
+  }
+}
+
 .wrapper {
   font-family: $main-font;
   padding: 16px 0;
@@ -10,19 +25,7 @@ $main-font: 'Roboto';
   text-transform: capitalize;
   text-align: center;
   max-width: 60vw;
-
-  .cross-wrapper {
-    display: flex;
-    justify-content: flex-end;
-
-    .cross {
-      cursor: pointer;
-
-      .cross-img {
-        filter: invert(100%);
-      }
-    }
-  }
+  margin: 0 auto;
 
   .title {
     font-size: 36px;
@@ -65,5 +68,12 @@ $main-font: 'Roboto';
       line-height: 19px;
       white-space: pre-wrap;
     }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .wrapper {
+    width: 100%;
+    height: 100%;
   }
 }

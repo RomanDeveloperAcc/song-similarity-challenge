@@ -4,21 +4,34 @@
   box-sizing: border-box;
 }
 
-.mat-dialog-container {
-  background-color: #21262a;
+.custom-dialog-container {
+  width: 60vw;
+  height: 80vh;
 
-  &::-webkit-scrollbar {
-    width: 6px;
+  .mat-dialog-container {
     background-color: #21262a;
-    border-radius: 6px;
-  }
 
-  &::-webkit-scrollbar-thumb {
-    width: 6px;
-    background-color: #2d353b;
-    border-radius: 6px;
+    &::-webkit-scrollbar {
+      width: 6px;
+      background-color: #21262a;
+      border-radius: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      width: 6px;
+      background-color: #2d353b;
+      border-radius: 6px;
+    }
   }
 }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@media (max-width: 420px) {
+  .custom-dialog-container {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+

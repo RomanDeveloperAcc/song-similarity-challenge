@@ -40,8 +40,9 @@ export class SimilarityListComponent implements OnInit, OnDestroy {
   public openDialogWindow(song: SimilarSongModel): void {
     this.songsService.setSongInfo(song);
     this.dialog.open(SongInfoComponent, {
-      maxHeight: '90vh',
-      width: '40vw'
+      maxWidth: '100vw',
+      maxHeight: '100vh',
+      panelClass: 'custom-dialog-container',
     });
   }
 
