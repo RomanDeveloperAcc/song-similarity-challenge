@@ -11,6 +11,19 @@ $main-font: 'Roboto';
   text-align: center;
   max-width: 60vw;
 
+  .cross-wrapper {
+    display: flex;
+    justify-content: flex-end;
+
+    .cross {
+      cursor: pointer;
+
+      .cross-img {
+        filter: invert(100%);
+      }
+    }
+  }
+
   .title {
     font-size: 36px;
     line-height: 42px;
