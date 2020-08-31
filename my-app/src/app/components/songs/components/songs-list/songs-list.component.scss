@@ -6,11 +6,10 @@ $main-font: 'Roboto';
   margin: 0 10%;
   padding: 24px 0;
 
-  .loading {
-    display: flex;
-    justify-content: center;
+  .mat-spinner {
+    margin: 0 auto;
 
-    &::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+    &::ng-deep circle {
       stroke: #fff;
     }
   }

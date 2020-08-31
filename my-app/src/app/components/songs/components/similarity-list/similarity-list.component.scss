@@ -26,6 +26,14 @@ $main-font: 'Roboto';
         animation: text-visibility 7s infinite;
       }
     }
+
+    .mat-spinner {
+      margin: 24px auto 0;
+
+      &::ng-deep circle {
+        stroke: #fff;
+      }
+    }
   }
 
   .no-result,
@@ -34,16 +42,6 @@ $main-font: 'Roboto';
     color: #fff;
     font-size: 36px;
     margin-top: 24px;
-  }
-
-  .spinner {
-    display: flex;
-    justify-content: center;
-    margin-top: 24px;
-
-    &::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
-      stroke: #fff;
-    }
   }
 }
 
