@@ -4,6 +4,9 @@
   box-sizing: border-box;
 }
 
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
 .custom-dark-dialog-container {
   width: 60vw;
   height: 80vh;
@@ -53,9 +56,6 @@
 .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
   background-color: #21262a;
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 @media (max-width: 420px) {
   .custom-dark-dialog-container,
