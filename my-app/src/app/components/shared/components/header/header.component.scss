@@ -8,10 +8,11 @@ header {
   background-color: #21262a;
   position: fixed;
   top: 0;
-  padding: 16px 48px;
   box-shadow: 0 0 48px 8px rgba(0,0,0,0.5);
 
   .brand {
+    padding: 16px 48px;
+
     &:hover {
       animation: shake 0.5s;
     }

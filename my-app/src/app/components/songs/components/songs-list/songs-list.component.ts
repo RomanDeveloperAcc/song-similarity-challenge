@@ -28,6 +28,10 @@ export class SongsListComponent implements OnInit, OnDestroy {
     this.setSongs();
   }
 
+  public viewSimilar(id: number): void {
+    this.router.navigate(['/songs/', id]);
+  }
+
   private setQuerySubscription(): void {
     this.querySubscription = this.route.queryParams
       .subscribe(params => this.query = params.query);
@@ -46,10 +50,6 @@ export class SongsListComponent implements OnInit, OnDestroy {
         this.isError = true;
         this.areSongsAvailable = true;
       });
-  }
-
-  public viewSimilar(id: number): void {
-    this.router.navigate(['/songs/', id]);
   }
 
   ngOnDestroy(): void {

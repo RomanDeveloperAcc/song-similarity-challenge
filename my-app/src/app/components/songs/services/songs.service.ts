@@ -13,6 +13,7 @@ export class SongsService {
   private searchQuery = '';
   private backEnd = environment.backEndLink;
   private songInfo: SimilarSongModel;
+
   constructor(private http: HttpClient) { }
 
   public getSongInfo(): SimilarSongModel {
