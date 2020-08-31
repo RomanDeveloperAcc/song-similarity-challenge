@@ -17,6 +17,14 @@ $main-font: 'Roboto';
   }
 }
 
+.cross-light {
+  .cross {
+    .cross-img {
+      filter: none;
+    }
+  }
+}
+
 .wrapper {
   font-family: $main-font;
   padding: 16px 0;
@@ -77,6 +85,23 @@ $main-font: 'Roboto';
       font-size: 16px;
       line-height: 19px;
       white-space: pre-wrap;
+    }
+  }
+}
+
+.light-wrapper {
+  color: #21262a;
+  background-color: #fff;
+
+  .title {
+    a {
+      color: #21262a;
+    }
+  }
+
+  .artist {
+    a {
+      color: #21262a;
     }
   }
 }

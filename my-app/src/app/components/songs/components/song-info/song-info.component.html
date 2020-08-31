@@ -1,4 +1,6 @@
-<div class="cross-wrapper">
+<div class="cross-wrapper"
+     [ngClass]="theme === 'dark' ? 'cross-wrapper' : 'cross-wrapper cross-light'"
+>
   <div class="cross"
        (click)="closeDialogWindow()"
   >
@@ -8,7 +10,9 @@
     >
   </div>
 </div>
-<div class="wrapper">
+<div class="wrapper"
+     [ngClass]="theme === 'dark' ? 'wrapper' : 'wrapper light-wrapper'"
+>
   <div class="title">
     <a [href]="songInfo.song_url"
        target="_blank"

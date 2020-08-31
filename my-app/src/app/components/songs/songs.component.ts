@@ -18,6 +18,10 @@ export class SongsComponent implements OnInit {
     this.setTheme();
   }
 
+  public prepareRoute(outlet: RouterOutlet): any {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
+  }
+
   private setTheme(): void {
     this.themeService.themeSubject
       .subscribe((value: string) => this.theme = value);
@@ -25,9 +29,4 @@ export class SongsComponent implements OnInit {
     const currentTheme = localStorage.getItem('theme');
     this.themeService.emitValue(currentTheme);
   }
-
-  public prepareRoute(outlet: RouterOutlet): any {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
-  }
-
 }

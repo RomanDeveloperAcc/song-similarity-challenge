@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-.custom-dialog-container {
+.custom-dark-dialog-container {
   width: 60vw;
   height: 80vh;
 
@@ -25,6 +25,27 @@
   }
 }
 
+.custom-light-dialog-container {
+  width: 60vw;
+  height: 80vh;
+
+  .mat-dialog-container {
+    background-color: #fff;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+      background-color: #fff;
+      border-radius: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      width: 6px;
+      background-color: #a8a8bd;
+      border-radius: 6px;
+    }
+  }
+}
+
 .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
   background-color: #a8a8bd;
 }
@@ -37,7 +58,8 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 @media (max-width: 420px) {
-  .custom-dialog-container {
+  .custom-dark-dialog-container,
+  .custom-light-dialog-container, {
     width: 100vw;
     height: 100vh;
   }

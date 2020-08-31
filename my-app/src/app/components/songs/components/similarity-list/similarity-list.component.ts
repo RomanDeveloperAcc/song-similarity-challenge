@@ -7,7 +7,7 @@ import { SongResponseModel } from '../../../../models/song-response.model';
 import { SimilarSongModel } from '../../models/similar-song.model';
 import { SongInfoComponent } from '../song-info/song-info.component';
 import { SONG_FACTS } from '../../../../constants/song-facts';
-import { ThemeService } from "../../../../services/theme-service/theme.service";
+import { ThemeService } from '../../../../services/theme-service/theme.service';
 
 @Component({
   selector: 'app-similarity-list',
@@ -45,11 +45,19 @@ export class SimilarityListComponent implements OnInit, OnDestroy {
 
   public openDialogWindow(song: SimilarSongModel): void {
     this.songsService.setSongInfo(song);
-    this.dialog.open(SongInfoComponent, {
-      maxWidth: '100vw',
-      maxHeight: '100vh',
-      panelClass: 'custom-dialog-container',
-    });
+    if (this.theme === 'dark') {
+      this.dialog.open(SongInfoComponent, {
+        maxWidth: '100vw',
+        maxHeight: '100vh',
+        panelClass: 'custom-dark-dialog-container',
+      });
+    } else {
+      this.dialog.open(SongInfoComponent, {
+        maxWidth: '100vw',
+        maxHeight: '100vh',
+        panelClass: 'custom-light-dialog-container',
+      });
+    }
   }
 
   public chooseMostSimilar(): void {
@@ -73,15 +81,9 @@ export class SimilarityListComponent implements OnInit, OnDestroy {
   }
 
   private sortSongs(): void {
-    if (this.mostSimilar) {
-      this.similarSongs.sort((a, b) => {
-        return b.percentage - a.percentage;
-      });
-    } else {
-      this.similarSongs.sort((a, b) => {
-        return a.percentage - b.percentage;
-      });
-    }
+    this.mostSimilar
+      ? this.similarSongs.sort((a, b) => b.percentage - a.percentage)
+      : this.similarSongs.sort((a, b) => a.percentage - b.percentage);
   }
 
   private setSongId(): void {

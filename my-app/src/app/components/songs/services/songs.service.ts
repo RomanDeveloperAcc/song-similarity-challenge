@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../../../../environments/environment';
-import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { environment } from '../../../../environments/environment';
 import { SongResponseModel } from '../../../models/song-response.model';
 import { QueryResponseModel } from '../../../models/query-response.model';
 import { SimilarSongModel } from '../models/similar-song.model';

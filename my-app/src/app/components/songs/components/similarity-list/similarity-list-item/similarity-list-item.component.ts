@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SimilarSongModel } from '../../../models/similar-song.model';
-import { ThemeService } from "../../../../../services/theme-service/theme.service";
+import { ThemeService } from '../../../../../services/theme-service/theme.service';
 
 @Component({
   selector: 'app-similarity-list-item',

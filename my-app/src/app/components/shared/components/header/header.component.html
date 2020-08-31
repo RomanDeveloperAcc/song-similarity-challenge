@@ -1,5 +1,7 @@
 <header class="header"
-        [ngClass]="theme === 'dark' ? 'header' : 'header light'"
+        [ngClass]="theme === 'dark'
+        ? 'header'
+        : 'header light'"
 >
   <div class="brand"
        (click)="goToHomepage()"

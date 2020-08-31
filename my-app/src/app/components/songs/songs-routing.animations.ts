@@ -18,6 +18,6 @@ export const fader =
             opacity: 1,
             transform: 'scale(1) translateY(0)'
           }))
-      ])
+      ], { optional: true })
     ])
   ]);
