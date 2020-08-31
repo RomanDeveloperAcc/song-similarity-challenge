@@ -20,7 +20,7 @@ export class SearchComponent implements OnInit {
   public search(): void {
     if (this.inputValue && this.inputValue.trim()) {
       this.songsService.setQuery(this.inputValue);
-      this.router.navigate(['/songs']);
+      this.router.navigate(['/songs'], { queryParams: { query: this.inputValue } });
     }
   }
 

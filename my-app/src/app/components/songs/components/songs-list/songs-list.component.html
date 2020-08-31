@@ -5,6 +5,11 @@
   >
     There are no songs :(
   </div>
+  <div class="error-message"
+       *ngIf="isError"
+  >
+    Whoops, something went wrong. Try to enter a new query.
+  </div>
   <app-songs-list-item *ngFor="let song of songs"
                        [song]="song"
                        (click)="viewSimilar(song.id)"
