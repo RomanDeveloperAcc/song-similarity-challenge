@@ -19,6 +19,8 @@ export class SimilarityListComponent implements OnInit, OnDestroy {
   public areSongsLoading = true;
   public isError = false;
   public songFact = '';
+  public mostSimilar = true;
+  public leastSimilar = false;
   private songFacts = SONG_FACTS;
   private factInterval = interval(7000);
   private songId: number;
@@ -44,6 +46,30 @@ export class SimilarityListComponent implements OnInit, OnDestroy {
       maxHeight: '100vh',
       panelClass: 'custom-dialog-container',
     });
+  }
+
+  public chooseMostSimilar(): void {
+    this.mostSimilar = true;
+    this.leastSimilar = false;
+    this.sortSongs();
+  }
+
+  public chooseLeastSimilar(): void {
+    this.mostSimilar = false;
+    this.leastSimilar = true;
+    this.sortSongs();
+  }
+
+  private sortSongs(): void {
+    if (this.mostSimilar) {
+      this.similarSongs.sort((a, b) => {
+        return b.percentage - a.percentage;
+      });
+    } else {
+      this.similarSongs.sort((a, b) => {
+        return a.percentage - b.percentage;
+      });
+    }
   }
 
   private setSongId(): void {

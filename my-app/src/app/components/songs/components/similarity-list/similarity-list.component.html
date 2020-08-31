@@ -25,6 +25,29 @@
     Whoops, something went wrong. Please, try again.
   </div>
 </div>
+<div class="text-wrapper">
+  <div class="sort"
+       *ngIf="areSongsAvailable"
+  >
+    <div class="sort-text">
+      Sort by:
+    </div>
+    <div class="sort-buttons">
+      <div class="most-similar"
+           [ngClass]="mostSimilar ? 'selected' : null"
+           (click)="chooseMostSimilar()"
+      >
+        Most similar
+      </div>
+      <div class="least-similar"
+           [ngClass]="leastSimilar ? 'selected' : null"
+           (click)="chooseLeastSimilar()"
+      >
+        Least similar
+      </div>
+    </div>
+  </div>
+</div>
 <div class="wrapper">
   <app-similarity-list-item *ngFor="let song of similarSongs"
                             [song]="song"
