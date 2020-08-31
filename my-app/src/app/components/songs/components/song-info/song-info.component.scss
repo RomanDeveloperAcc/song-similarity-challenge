@@ -35,6 +35,11 @@ $main-font: 'Roboto';
       color: #fff;
       text-decoration: none;
       outline: none;
+
+      &:hover {
+        animation: change-color 0.5s;
+        color: #a8a8bd;
+      }
     }
   }
 
@@ -46,6 +51,11 @@ $main-font: 'Roboto';
       color: #fff;
       text-decoration: none;
       outline: none;
+
+      &:hover {
+        animation: change-color 0.5s;
+        color: #a8a8bd;
+      }
     }
   }
 
@@ -75,5 +85,14 @@ $main-font: 'Roboto';
   .wrapper {
     width: 100%;
     height: 100%;
+  }
+}
+
+@keyframes change-color {
+  0% {
+    color: #fff;
+  }
+  100% {
+    color: #a8a8bd;
   }
 }

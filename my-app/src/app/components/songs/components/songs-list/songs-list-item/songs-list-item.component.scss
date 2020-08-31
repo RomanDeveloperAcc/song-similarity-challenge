@@ -13,4 +13,21 @@ $main-font: 'Roboto';
   text-transform: capitalize;
   box-shadow: 0 0 48px 8px rgba(0,0,0,0.5);
   cursor: pointer;
+
+  &:hover {
+    animation: change-element 0.5s;
+    background-color: #2d353b;
+    margin-left: 16px;
+  }
+}
+
+@keyframes change-element {
+  0% {
+    background-color: #21262a;
+    margin-left: 0;
+  }
+  100% {
+    background-color: #2d353b;
+    margin-left: 16px;
+  }
 }

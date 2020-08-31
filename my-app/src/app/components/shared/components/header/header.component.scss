@@ -12,11 +12,41 @@ header {
   box-shadow: 0 0 48px 8px rgba(0,0,0,0.5);
 
   .brand {
+    &:hover {
+      animation: shake 0.5s;
+    }
+
     .brand-link {
       text-decoration: none;
       color: #fff;
       font-size: 32px;
       line-height: 40px;
+
+      &:hover {
+        animation: change-color 0.5s;
+        color: #a8a8bd;
+      }
     }
+  }
+}
+
+@keyframes change-color {
+  0% {
+    color: #fff;
+  }
+  100% {
+    color: #a8a8bd;
+  }
+}
+
+@keyframes shake {
+  0% {
+    margin-left: 0;
+  }
+  50% {
+    margin-left: 8px;
+  }
+  100% {
+    margin-left: 0;
   }
 }
