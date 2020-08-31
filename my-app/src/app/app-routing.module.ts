@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { HomepageComponent } from './components/home/components/homepage/homepage.component';
 
-
 const routes: Routes = [
   {
     path: 'home',
