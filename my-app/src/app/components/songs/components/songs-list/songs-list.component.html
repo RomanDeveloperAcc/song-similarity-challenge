@@ -1,4 +1,6 @@
-<div class="wrapper">
+<div class="wrapper"
+     [ngClass]="theme === 'dark' ? 'wrapper' : 'wrapper light'"
+>
   <mat-spinner *ngIf="areSongsLoading"></mat-spinner>
   <div class="no-result"
        *ngIf="!areSongsAvailable && !areSongsLoading"

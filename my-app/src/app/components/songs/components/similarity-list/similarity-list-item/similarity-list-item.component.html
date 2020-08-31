@@ -1,4 +1,6 @@
-<div class="wrapper">
+<div class="wrapper"
+     [ngClass]="theme === 'dark' ? 'wrapper' : 'wrapper light'"
+>
   <div class="dynamic-info">
     <div class="title">
       {{ song.song_name }}

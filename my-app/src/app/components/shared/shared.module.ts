@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
@@ -7,7 +8,8 @@ import { HeaderComponent } from './components/header/header.component';
     HeaderComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatSlideToggleModule
   ],
   exports: [
     HeaderComponent

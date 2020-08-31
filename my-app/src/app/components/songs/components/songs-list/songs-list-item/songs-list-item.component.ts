@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SongModel } from '../../../models/song.model';
+import { ThemeService } from '../../../../../services/theme-service/theme.service';
 
 @Component({
   selector: 'app-songs-list-item',
@@ -8,10 +9,20 @@ import { SongModel } from '../../../models/song.model';
 })
 export class SongsListItemComponent implements OnInit {
   @Input() public song: SongModel;
+  public theme = 'dark';
 
-  constructor() { }
+  constructor(private themeService: ThemeService) { }
 
   ngOnInit(): void {
+    this.setTheme();
+  }
+
+  private setTheme(): void {
+    this.themeService.themeSubject
+      .subscribe((value: string) => this.theme = value);
+
+    const currentTheme = localStorage.getItem('theme');
+    this.themeService.emitValue(currentTheme);
   }
 
 }

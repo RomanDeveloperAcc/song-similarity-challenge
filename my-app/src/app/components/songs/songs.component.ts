@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { fader } from './songs-routing.animations';
+import { ThemeService } from '../../services/theme-service/theme.service';
 
 @Component({
   selector: 'app-songs',
@@ -9,10 +10,20 @@ import { fader } from './songs-routing.animations';
   animations: [fader]
 })
 export class SongsComponent implements OnInit {
+  public theme = 'dark';
 
-  constructor() { }
+  constructor(private themeService: ThemeService) { }
 
   ngOnInit(): void {
+    this.setTheme();
+  }
+
+  private setTheme(): void {
+    this.themeService.themeSubject
+      .subscribe((value: string) => this.theme = value);
+
+    const currentTheme = localStorage.getItem('theme');
+    this.themeService.emitValue(currentTheme);
   }
 
   public prepareRoute(outlet: RouterOutlet): any {

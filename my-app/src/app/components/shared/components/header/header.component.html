@@ -1,9 +1,21 @@
-<header>
-  <div class="brand">
-    <a [href]="['/home']"
-       class="brand-link"
+<header class="header"
+        [ngClass]="theme === 'dark' ? 'header' : 'header light'"
+>
+  <div class="brand"
+       (click)="goToHomepage()"
+  >
+    <a class="brand-link"
     >
       Music4you
     </a>
+  </div>
+  <div class="toggle-slider">
+    <div class="theme-text">
+      Dark theme
+    </div>
+    <mat-slide-toggle (click)="changeTheme()"></mat-slide-toggle>
+    <div class="theme-text">
+      Light theme
+    </div>
   </div>
 </header>

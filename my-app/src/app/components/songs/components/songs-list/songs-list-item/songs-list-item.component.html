@@ -1,3 +1,5 @@
-<div class="song-info">
+<div class="song-info"
+     [ngClass]="theme === 'dark' ? 'song-info' : 'song-info light'"
+>
   {{ song.name }}
 </div>

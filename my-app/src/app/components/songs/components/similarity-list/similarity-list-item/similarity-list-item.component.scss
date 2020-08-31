@@ -54,6 +54,16 @@ $main-font: 'Roboto';
   }
 }
 
+.light {
+  color: #21262a;
+  background-color: #fff;
+
+  &:hover {
+    animation: change-light-background 1s;
+    background-color: #c8cbcd;
+  }
+}
+
 @keyframes change-background {
   0% {
     background-color: #21262a;
@@ -62,3 +72,15 @@ $main-font: 'Roboto';
     background-color: #2d353b;
   }
 }
+
+@keyframes change-light-element {
+  0% {
+    background-color: #fff;
+    margin-left: 0;
+  }
+  100% {
+    background-color: #c8cbcd;
+    margin-left: 16px;
+  }
+}
+

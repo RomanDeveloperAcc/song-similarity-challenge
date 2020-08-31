@@ -2,16 +2,20 @@
 
 $main-font: 'Roboto';
 
-header {
+.header {
   font-family: $main-font;
   width: 100vw;
   background-color: #21262a;
   position: fixed;
   top: 0;
+  padding: 12px 24px;
   box-shadow: 0 0 48px 8px rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   .brand {
-    padding: 16px 48px;
+    cursor: pointer;
 
     &:hover {
       animation: shake 0.5s;
@@ -26,6 +30,53 @@ header {
       &:hover {
         animation: change-color 0.5s;
         color: #a8a8bd;
+      }
+    }
+  }
+
+  .toggle-slider {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 24px;
+
+    .mat-slide-toggle {
+      margin: 0 8px;
+    }
+  }
+}
+
+.light {
+  background-color: #fff;
+
+  .brand {
+    .brand-link {
+      color: #21262a;
+    }
+  }
+
+  .toggle-slider {
+    color: #21262a;
+
+    .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+      background-color: #21262a;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .header {
+    .toggle-slider {
+      .theme-text {
+        display: none;
+      }
+    }
+  }
+
+  .light {
+    .toggle-slider {
+      .theme-text {
+        display: none;
       }
     }
   }

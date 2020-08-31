@@ -1,4 +1,8 @@
-<div class="loaders-wrapper">
+<div class="loaders-wrapper"
+     [ngClass]="theme === 'dark'
+     ? 'loaders-wrapper'
+     : 'loaders-wrapper loaders-light'"
+>
   <div class="loading"
        *ngIf="areSongsLoading"
   >
@@ -25,7 +29,12 @@
     Whoops, something went wrong. Please, try again.
   </div>
 </div>
-<div class="text-wrapper">
+<div class="text-wrapper"
+     [ngClass]="theme === 'dark'
+     ? 'text-wrapper'
+     : 'text-wrapper text-light'"
+
+>
   <div class="sort"
        *ngIf="areSongsAvailable"
   >

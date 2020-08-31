@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SimilarSongModel } from '../../../models/similar-song.model';
+import { ThemeService } from "../../../../../services/theme-service/theme.service";
 
 @Component({
   selector: 'app-similarity-list-item',
@@ -8,10 +9,19 @@ import { SimilarSongModel } from '../../../models/similar-song.model';
 })
 export class SimilarityListItemComponent implements OnInit {
   @Input() public song: SimilarSongModel;
+  public theme = 'dark';
 
-  constructor() { }
+  constructor(private themeService: ThemeService) { }
 
   ngOnInit(): void {
+    this.setTheme();
   }
 
+  private setTheme(): void {
+    this.themeService.themeSubject
+      .subscribe((value: string) => this.theme = value);
+
+    const currentTheme = localStorage.getItem('theme');
+    this.themeService.emitValue(currentTheme);
+  }
 }

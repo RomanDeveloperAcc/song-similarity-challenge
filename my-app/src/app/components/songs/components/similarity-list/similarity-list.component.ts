@@ -7,6 +7,7 @@ import { SongResponseModel } from '../../../../models/song-response.model';
 import { SimilarSongModel } from '../../models/similar-song.model';
 import { SongInfoComponent } from '../song-info/song-info.component';
 import { SONG_FACTS } from '../../../../constants/song-facts';
+import { ThemeService } from "../../../../services/theme-service/theme.service";
 
 @Component({
   selector: 'app-similarity-list',
@@ -21,6 +22,7 @@ export class SimilarityListComponent implements OnInit, OnDestroy {
   public songFact = '';
   public mostSimilar = true;
   public leastSimilar = false;
+  public theme = 'dark';
   private songFacts = SONG_FACTS;
   private factInterval = interval(7000);
   private songId: number;
@@ -29,10 +31,12 @@ export class SimilarityListComponent implements OnInit, OnDestroy {
   private songIdSubscription: Subscription;
 
   constructor(private songsService: SongsService,
+              private themeService: ThemeService,
               private dialog: MatDialog,
               private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.setTheme();
     this.setSongId();
     this.setSongIdSubscription();
     this.setSongsFact();
@@ -58,6 +62,14 @@ export class SimilarityListComponent implements OnInit, OnDestroy {
     this.mostSimilar = false;
     this.leastSimilar = true;
     this.sortSongs();
+  }
+
+  private setTheme(): void {
+    this.themeService.themeSubject
+      .subscribe((value: string) => this.theme = value);
+
+    const currentTheme = localStorage.getItem('theme');
+    this.themeService.emitValue(currentTheme);
   }
 
   private sortSongs(): void {

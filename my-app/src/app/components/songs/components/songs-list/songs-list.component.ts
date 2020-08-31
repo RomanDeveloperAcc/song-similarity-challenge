@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { SongsService } from '../../services/songs.service';
 import { QueryResponseModel } from '../../../../models/query-response.model';
 import { SongModel } from '../../models/song.model';
+import { ThemeService } from '../../../../services/theme-service/theme.service';
 
 @Component({
   selector: 'app-songs-list',
@@ -15,21 +16,32 @@ export class SongsListComponent implements OnInit, OnDestroy {
   public areSongsAvailable = false;
   public areSongsLoading = true;
   public isError = false;
+  public theme = 'dark';
   private query: string;
   private querySubscription: Subscription;
   private songsSubscription: Subscription;
 
   constructor(private songsService: SongsService,
+              private themeService: ThemeService,
               private router: Router,
               private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.setTheme();
     this.setQuerySubscription();
     this.setSongs();
   }
 
   public viewSimilar(id: number): void {
     this.router.navigate(['/songs/', id]);
+  }
+
+  private setTheme(): void {
+    this.themeService.themeSubject
+      .subscribe((value: string) => this.theme = value);
+
+    const currentTheme = localStorage.getItem('theme');
+    this.themeService.emitValue(currentTheme);
   }
 
   private setQuerySubscription(): void {

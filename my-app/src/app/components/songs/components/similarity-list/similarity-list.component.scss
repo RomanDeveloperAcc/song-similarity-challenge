@@ -45,6 +45,25 @@ $main-font: 'Roboto';
   }
 }
 
+.loaders-light {
+  .loading {
+    .loading-text {
+      color: #21262a;
+    }
+
+    .mat-spinner {
+      &::ng-deep circle {
+        stroke: #21262a;
+      }
+    }
+  }
+
+  .no-result,
+  .error-message {
+    color: #21262a;
+  }
+}
+
 .text-wrapper {
   margin: 0 5%;
 
@@ -75,6 +94,25 @@ $main-font: 'Roboto';
         color: #21262a;
         border: 1px #21262a solid;
         background-color: #fff;
+      }
+    }
+  }
+}
+
+.text-light {
+  .sort {
+    color: #21262a;
+
+    .sort-buttons {
+      .most-similar,
+      .least-similar {
+        border: 1px #21262a solid;
+      }
+
+      .selected {
+        color: #ffffff;
+        border: 1px #ffffff solid;
+        background-color: #21262a;
       }
     }
   }

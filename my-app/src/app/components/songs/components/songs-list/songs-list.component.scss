@@ -23,3 +23,16 @@ $main-font: 'Roboto';
     text-align: center;
   }
 }
+
+.light {
+  .mat-spinner {
+    &::ng-deep circle {
+      stroke: #21262a;
+    }
+  }
+
+  .no-result,
+  .error-message {
+    color: #21262a;
+  }
+}
